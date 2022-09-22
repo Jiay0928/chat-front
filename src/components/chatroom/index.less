@@ -1,0 +1,126 @@
+.Chatroom{
+    
+    width: 500px;
+    
+    line-height: 1.5;
+    font-size: 16px;
+    
+    .chatContainer{
+        overflow-y: scroll;
+        height: 500px;
+        .title{
+            text-align: center;
+        }
+    
+        .chatBoxLeft{
+            padding: 10px;
+            display: flex;
+            justify-content: left;
+            
+            .name{
+            
+                width: 40px;
+                margin-right: 32PX;
+                
+            }
+            .wordContainer{
+                
+                
+                flex: 1;
+                padding-right: 94px;
+                
+                .word{
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    background-color: lavender; 
+                    width: fit-content;
+                    border-radius: 4px;
+                    position: relative;
+                    padding-bottom: 4px;
+                    
+                    &:before{
+                        content: '';
+                        width: 0px;
+                        height: 0px;
+                        border-style: solid;
+                        border-width: 6px 8px 6px 0;
+                        border-color: transparent lavender  transparent transparent;  
+                        position: absolute;
+                        left: -8px;
+                        top: 6px;
+                    }
+                }
+                
+            }
+            
+            
+        }
+        .chatBoxRight{
+            padding: 10px;
+            display: flex;
+            justify-content: right;
+            
+            .name{
+            
+                width: 40px;
+                margin-left: 32PX;
+                
+            }
+            .wordContainer{
+                
+                
+                flex: 1;
+                padding-left: 94px;
+                text-align: right;
+                
+                .word{
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    background-color: lightcyan; 
+                    width: fit-content;
+                    display: inline-block;
+                    border-radius: 4px;
+                    position: relative;
+                    padding-bottom: 4px;
+                    text-align: left;
+                    
+                    &::after{
+                        content: '';
+                        width: 0px;
+                        height: 0px;
+                        border-style: solid;
+                        border-width: 6px 0px 6px 8px;
+                        border-color: transparent   transparent transparent lightcyan;  
+                        position: absolute;
+                        right: -8px;
+                        top: 6px;
+                    }
+                }
+                
+            }
+            
+            
+        }
+
+    }
+    form{
+        padding-top: 2px;
+        
+        width: 100%;
+        display: flex;
+        .inputBox{
+            flex: 1;
+            padding: 8px;
+            overflow: scroll;
+            
+        }
+        .submit{
+            width: 64px;
+            background-color: rgb(196, 255, 255);
+            cursor: pointer;
+        }
+
+    }
+    
+    
+}
