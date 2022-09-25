@@ -1,13 +1,19 @@
-import React, {useState, } from 'react';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import "./index.less"
-export default function SigninBlock() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("")
+const axios = require('axios').default;;
+export default function SigninBlock({setUsername, setRoom, username, room}) {
   const navigate = useNavigate();
-  const submitHandler = (e) => {
+  const submitHandler = async(e) => {
     e.preventDefault();
-    navigate("/chat", { replace: true });
+    try{
+      let data = await axios.post("http://localhost:3000/login",{username, room})
+    }catch(e){
+      alert("error happening")
+      return;
+    }
+    
+     navigate("/chat", { replace: true });
    
 
   }
@@ -21,9 +27,9 @@ export default function SigninBlock() {
           }}/>
         </label>
         <label>
-          password:
-          <input type="text" value={password} name="password" onChange={(e) => {
-            setPassword(e.target.value);
+          room:
+          <input type="text" value={room} name="password" onChange={(e) => {
+            setRoom(e.target.value);
           }}/>
         </label>
         <button className='submit' type="submit">Submit</button>

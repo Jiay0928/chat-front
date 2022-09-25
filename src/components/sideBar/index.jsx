@@ -1,31 +1,8 @@
 import React from 'react';
 import "./index.less";
 
-export default function SideBar() {
-  let friends=[
-    {id: 1,
-      name: "Alice",
-    },
-    {id: 2,
-      name: "Alice",
-    },
-    {id: 3,
-      name: "Alice",
-    }
-
-  ]
-  let groups=[
-    {id: 1,
-      name: "Alice",
-    },
-    {id: 2,
-      name: "Alice",
-    },
-    {id: 3,
-      name: "Alice",
-    }
-
-  ]
+export default function SideBar({room}) {
+  let friends = []
   const valueContainerGenerator = ({name}, index) => 
     <div className="valueContainer" key={index}>
       {name}
@@ -35,13 +12,11 @@ export default function SideBar() {
     <div className='SideBar'>
       <div className="groupContainer">
         <div className="title">
-          Groups
+          Groups Name
         </div>
-        {
-          groups.map((value, index) => 
-            valueContainerGenerator(value,index)
-          )
-        }
+        <div className="valueContainer">
+          {room}
+        </div>
       </div>
       <div className="friendContainer">
         <div className="title">
